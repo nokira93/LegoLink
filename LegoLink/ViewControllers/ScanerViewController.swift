@@ -15,7 +15,7 @@ class ScanerViewController: UIViewController {
        override func viewDidLoad() {
            super.viewDidLoad()
            
-           view.backgroundColor = UIColor.black
+           Colors.getBackground(view: view)
 //           captureSession = AVCaptureSession()
 //
 //           guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }

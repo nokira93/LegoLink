@@ -26,6 +26,7 @@
 		C05E757A2A5F31AE00646EDB /* ApiParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E75792A5F31AE00646EDB /* ApiParsing.swift */; };
 		C05E757D2A5F324E00646EDB /* DetailesSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E757B2A5F324E00646EDB /* DetailesSet.swift */; };
 		C05E757E2A5F324E00646EDB /* DetailesSet.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05E757C2A5F324E00646EDB /* DetailesSet.xib */; };
+		C06456C22A65960100ACA921 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06456C12A65960100ACA921 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C05E75792A5F31AE00646EDB /* ApiParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParsing.swift; sourceTree = "<group>"; };
 		C05E757B2A5F324E00646EDB /* DetailesSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesSet.swift; sourceTree = "<group>"; };
 		C05E757C2A5F324E00646EDB /* DetailesSet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailesSet.xib; sourceTree = "<group>"; };
+		C06456C12A65960100ACA921 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				C0596B6D2A57307E00F783F9 /* LegoLink.xcdatamodeld */,
 				C05B1C7C2A5B435500DC8F48 /* SeriesTypes.swift */,
 				C05E75762A5F313B00646EDB /* DetailedSet.swift */,
+				C06456C12A65960100ACA921 /* Colors.swift */,
 			);
 			path = LegoLink;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				C0596B692A57307E00F783F9 /* ViewController.swift in Sources */,
 				C0596B652A57307E00F783F9 /* AppDelegate.swift in Sources */,
 				C0596B6F2A57307E00F783F9 /* LegoLink.xcdatamodeld in Sources */,
+				C06456C22A65960100ACA921 /* Colors.swift in Sources */,
 				C04736092A5DC1BE00ED9116 /* SetsViewController.swift in Sources */,
 				C0596B672A57307E00F783F9 /* SceneDelegate.swift in Sources */,
 				C05E757A2A5F31AE00646EDB /* ApiParsing.swift in Sources */,

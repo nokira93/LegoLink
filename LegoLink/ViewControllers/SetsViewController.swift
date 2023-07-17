@@ -24,10 +24,13 @@ class SetsViewController: UIViewController,UICollectionViewDelegate,UICollection
         override func viewDidLoad() {
             super.viewDidLoad()
             
+            
+//            Colors.getBackground(view: view)
+            view.backgroundColor = Colors.backgroundColor
             setCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
+            setCollectionView?.backgroundColor = .clear
 
             setCollectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
-            setCollectionView?.backgroundColor = UIColor.black
 
             view.addSubview(setCollectionView ?? UICollectionView())
             

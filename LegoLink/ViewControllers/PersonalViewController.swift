@@ -11,7 +11,9 @@ class PersonalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        
+        Colors.getBackground(view: view)
+        
     }
     
 }
