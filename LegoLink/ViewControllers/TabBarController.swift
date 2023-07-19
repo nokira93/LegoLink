@@ -30,7 +30,6 @@ class TabBarController: UITabBarController {
         
         nav.tabBarItem.title = title
         nav.tabBarItem.image = image
-        nav.viewControllers.first?.navigationItem.title = title + " Controller"
         nav.viewControllers.first?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: nil, action: nil)
         return nav
     }

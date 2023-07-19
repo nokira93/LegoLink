@@ -16,7 +16,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.overrideUserInterfaceStyle = .dark
         return map
     }()
-//    let coordinate = CLLocationCoordinate2D(latitude: 53.4281666, longitude: 14.5497413)
     let coordinate = CLLocationCoordinate2D(latitude: 53.4399892384303, longitude: 14.578446459366214)
     
     override func viewDidLoad() {

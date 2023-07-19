@@ -9,8 +9,8 @@ import Foundation
 
 enum SeriesTypes: String, CaseIterable {
     case harryPotter = "harryPotter"
-    case startWars = "startWars"
+    case starWars = "starWars"
     case technic = "technic"
-    case marvel = "marvel"
+    case avengers = "avengers"
     case ninjago = "ninjago"
 }
