@@ -27,6 +27,7 @@
 		C05E757D2A5F324E00646EDB /* DetailesSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E757B2A5F324E00646EDB /* DetailesSet.swift */; };
 		C05E757E2A5F324E00646EDB /* DetailesSet.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05E757C2A5F324E00646EDB /* DetailesSet.xib */; };
 		C06456C22A65960100ACA921 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06456C12A65960100ACA921 /* Colors.swift */; };
+		C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FECED22A69BA4F005B22BD /* UserLocationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		C05E757B2A5F324E00646EDB /* DetailesSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesSet.swift; sourceTree = "<group>"; };
 		C05E757C2A5F324E00646EDB /* DetailesSet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailesSet.xib; sourceTree = "<group>"; };
 		C06456C12A65960100ACA921 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C0FECED22A69BA4F005B22BD /* UserLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				C05DB40B2A6473E200A8747F /* MapAssets.xcassets */,
+				C0FECED22A69BA4F005B22BD /* UserLocationController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				C05B1C7B2A5B429000DC8F48 /* MapViewController.swift in Sources */,
 				C0596B992A57318700F783F9 /* ScanerViewController.swift in Sources */,
 				C05E75772A5F313B00646EDB /* DetailedSet.swift in Sources */,
+				C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */,
 				C0596B9F2A57323400F783F9 /* TabBarController.swift in Sources */,
 				C05B1C7D2A5B435500DC8F48 /* SeriesTypes.swift in Sources */,
 				C0596B9D2A5731B400F783F9 /* PersonalViewController.swift in Sources */,
@@ -494,8 +498,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3DH947793;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LegoLink/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Give me location!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -521,8 +527,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3DH947793;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LegoLink/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Give me location!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

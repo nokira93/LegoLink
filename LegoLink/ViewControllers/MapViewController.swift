@@ -8,6 +8,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Combine
+import SwiftUI
 
 class MapViewController: UIViewController, MKMapViewDelegate {
 
@@ -16,7 +18,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.overrideUserInterfaceStyle = .dark
         return map
     }()
-    let coordinate = CLLocationCoordinate2D(latitude: 53.4399892384303, longitude: 14.578446459366214)
+//    var coordinate = CLLocationCoordinate2D(latitude: 53.4399892384303, longitude: 14.578446459366214)
+    var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    @StateObject var deviceLocationService = UserLocationController.shared
+    @State var tokens: Set<AnyCancellable> = []
+//    @State var coordinates: (lat: Double, lon: Double) = (0, 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                                              )
                                             ),
                           animated: false)
+        
+        observeCoordinateUpdates()
+        obserLocationAccessDenied()
+        deviceLocationService.requestLocationUpdates()
     }
     
     
@@ -46,7 +56,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let annotation = MKPointAnnotation()
         annotation.title = "Lego Shop"
         annotation.subtitle = "Shop with Lego bricks"
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 53.4399892384303, longitude: 14.578446459366214)
+//        annotation.coordinate = CLLocationCoordinate2D(latitude: 53.4399892384303, longitude: 14.578446459366214)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
         mapView.addAnnotation(annotation)
     }
     
@@ -64,5 +75,26 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let sizePOI:Double = 85.0
         annotationView?.frame = CGRect(x: 0, y: 0, width: sizePOI * ratio, height: sizePOI)
         return annotationView
+    }
+    func observeCoordinateUpdates() {
+        deviceLocationService.coordinatesPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                if case .failure(let error) = completion {
+                    print(error)
+                }
+            } receiveValue: { coordinates in
+                self.coordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+            }
+            .store(in: &tokens)
+    }
+    
+    func obserLocationAccessDenied() {
+        deviceLocationService.deniedLocationAccessPublisher
+            .receive(on: DispatchQueue.main)
+            .sink {
+                print("Error")
+            }
+            .store(in: &tokens)
     }
 }
