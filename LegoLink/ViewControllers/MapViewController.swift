@@ -23,6 +23,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @StateObject var deviceLocationService = UserLocationController.shared
     @State var tokens: Set<AnyCancellable> = []
 //    @State var coordinates: (lat: Double, lon: Double) = (0, 0)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         observeCoordinateUpdates()
         obserLocationAccessDenied()
         deviceLocationService.requestLocationUpdates()
+        print("Dupa \(coordinate.latitude) || \(coordinate.longitude)")
     }
     
     
