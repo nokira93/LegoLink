@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C01A70B12A6AFCB800CF786E /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A70B02A6AFCB800CF786E /* ApiResponse.swift */; };
 		C04736092A5DC1BE00ED9116 /* SetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04736082A5DC1BE00ED9116 /* SetsViewController.swift */; };
 		C0596B652A57307E00F783F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0596B642A57307E00F783F9 /* AppDelegate.swift */; };
 		C0596B672A57307E00F783F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0596B662A57307E00F783F9 /* SceneDelegate.swift */; };
@@ -24,11 +23,16 @@
 		C05B1C7D2A5B435500DC8F48 /* SeriesTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C7C2A5B435500DC8F48 /* SeriesTypes.swift */; };
 		C05DB40C2A6473E200A8747F /* MapAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05DB40B2A6473E200A8747F /* MapAssets.xcassets */; };
 		C05E75772A5F313B00646EDB /* DetailedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E75762A5F313B00646EDB /* DetailedSet.swift */; };
-		C05E757A2A5F31AE00646EDB /* ApiParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E75792A5F31AE00646EDB /* ApiParsing.swift */; };
 		C05E757D2A5F324E00646EDB /* DetailesSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E757B2A5F324E00646EDB /* DetailesSet.swift */; };
 		C05E757E2A5F324E00646EDB /* DetailesSet.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05E757C2A5F324E00646EDB /* DetailesSet.xib */; };
 		C05E86402A6D24A00054CA97 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C05E863E2A6D24A00054CA97 /* DataModel.xcdatamodeld */; };
 		C05E86422A6D24BD0054CA97 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */; };
+		C05E86442A6D8E910054CA97 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86432A6D8E910054CA97 /* APIManager.swift */; };
+		C05E86462A6D8EFB0054CA97 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86452A6D8EFB0054CA97 /* EndPoint.swift */; };
+		C05E86482A6D8F0F0054CA97 /* LegoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86472A6D8F0F0054CA97 /* LegoError.swift */; };
+		C05E864A2A6D8F2D0054CA97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86492A6D8F2D0054CA97 /* Extensions.swift */; };
+		C05E864C2A6D8F430054CA97 /* LegoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E864B2A6D8F430054CA97 /* LegoApi.swift */; };
+		C05E864E2A6D8F640054CA97 /* UsearsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E864D2A6D8F640054CA97 /* UsearsAPI.swift */; };
 		C06456C22A65960100ACA921 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06456C12A65960100ACA921 /* Colors.swift */; };
 		C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FECED22A69BA4F005B22BD /* UserLocationController.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C01A70B02A6AFCB800CF786E /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		C04736082A5DC1BE00ED9116 /* SetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsViewController.swift; sourceTree = "<group>"; };
 		C0596B612A57307E00F783F9 /* LegoLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegoLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0596B642A57307E00F783F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,11 +75,16 @@
 		C05B1C7C2A5B435500DC8F48 /* SeriesTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTypes.swift; sourceTree = "<group>"; };
 		C05DB40B2A6473E200A8747F /* MapAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MapAssets.xcassets; sourceTree = "<group>"; };
 		C05E75762A5F313B00646EDB /* DetailedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSet.swift; sourceTree = "<group>"; };
-		C05E75792A5F31AE00646EDB /* ApiParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParsing.swift; sourceTree = "<group>"; };
 		C05E757B2A5F324E00646EDB /* DetailesSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesSet.swift; sourceTree = "<group>"; };
 		C05E757C2A5F324E00646EDB /* DetailesSet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailesSet.xib; sourceTree = "<group>"; };
 		C05E863F2A6D24A00054CA97 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		C05E86432A6D8E910054CA97 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		C05E86452A6D8EFB0054CA97 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		C05E86472A6D8F0F0054CA97 /* LegoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoError.swift; sourceTree = "<group>"; };
+		C05E86492A6D8F2D0054CA97 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C05E864B2A6D8F430054CA97 /* LegoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoApi.swift; sourceTree = "<group>"; };
+		C05E864D2A6D8F640054CA97 /* UsearsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsearsAPI.swift; sourceTree = "<group>"; };
 		C06456C12A65960100ACA921 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C0FECED22A69BA4F005B22BD /* UserLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +151,7 @@
 				C05B1C7C2A5B435500DC8F48 /* SeriesTypes.swift */,
 				C05E75762A5F313B00646EDB /* DetailedSet.swift */,
 				C06456C12A65960100ACA921 /* Colors.swift */,
+				C05E86492A6D8F2D0054CA97 /* Extensions.swift */,
 			);
 			path = LegoLink;
 			sourceTree = "<group>";
@@ -197,8 +206,11 @@
 		C05E75782A5F319500646EDB /* API */ = {
 			isa = PBXGroup;
 			children = (
-				C05E75792A5F31AE00646EDB /* ApiParsing.swift */,
-				C01A70B02A6AFCB800CF786E /* ApiResponse.swift */,
+				C05E86432A6D8E910054CA97 /* APIManager.swift */,
+				C05E86452A6D8EFB0054CA97 /* EndPoint.swift */,
+				C05E86472A6D8F0F0054CA97 /* LegoError.swift */,
+				C05E864B2A6D8F430054CA97 /* LegoApi.swift */,
+				C05E864D2A6D8F640054CA97 /* UsearsAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -344,23 +356,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0596B692A57307E00F783F9 /* ViewController.swift in Sources */,
+				C05E86442A6D8E910054CA97 /* APIManager.swift in Sources */,
 				C0596B652A57307E00F783F9 /* AppDelegate.swift in Sources */,
 				C0596B6F2A57307E00F783F9 /* LegoLink.xcdatamodeld in Sources */,
+				C05E864C2A6D8F430054CA97 /* LegoApi.swift in Sources */,
 				C05E86422A6D24BD0054CA97 /* CoreDataStack.swift in Sources */,
 				C06456C22A65960100ACA921 /* Colors.swift in Sources */,
 				C05E86402A6D24A00054CA97 /* DataModel.xcdatamodeld in Sources */,
+				C05E86482A6D8F0F0054CA97 /* LegoError.swift in Sources */,
 				C04736092A5DC1BE00ED9116 /* SetsViewController.swift in Sources */,
-				C01A70B12A6AFCB800CF786E /* ApiResponse.swift in Sources */,
 				C0596B672A57307E00F783F9 /* SceneDelegate.swift in Sources */,
-				C05E757A2A5F31AE00646EDB /* ApiParsing.swift in Sources */,
 				C05B1C7B2A5B429000DC8F48 /* MapViewController.swift in Sources */,
 				C0596B992A57318700F783F9 /* ScanerViewController.swift in Sources */,
 				C05E75772A5F313B00646EDB /* DetailedSet.swift in Sources */,
+				C05E86462A6D8EFB0054CA97 /* EndPoint.swift in Sources */,
 				C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */,
+				C05E864A2A6D8F2D0054CA97 /* Extensions.swift in Sources */,
 				C0596B9F2A57323400F783F9 /* TabBarController.swift in Sources */,
 				C05B1C7D2A5B435500DC8F48 /* SeriesTypes.swift in Sources */,
 				C0596B9D2A5731B400F783F9 /* PersonalViewController.swift in Sources */,
 				C05E757D2A5F324E00646EDB /* DetailesSet.swift in Sources */,
+				C05E864E2A6D8F640054CA97 /* UsearsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
