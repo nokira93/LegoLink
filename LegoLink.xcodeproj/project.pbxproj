@@ -41,11 +41,7 @@
 		C05E86402A6D24A00054CA97 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C05E863E2A6D24A00054CA97 /* DataModel.xcdatamodeld */; };
 		C05E86422A6D24BD0054CA97 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */; };
 		C05E86442A6D8E910054CA97 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86432A6D8E910054CA97 /* APIManager.swift */; };
-		C05E86462A6D8EFB0054CA97 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86452A6D8EFB0054CA97 /* EndPoint.swift */; };
-		C05E86482A6D8F0F0054CA97 /* LegoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86472A6D8F0F0054CA97 /* LegoError.swift */; };
 		C05E864A2A6D8F2D0054CA97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86492A6D8F2D0054CA97 /* Extensions.swift */; };
-		C05E864C2A6D8F430054CA97 /* LegoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E864B2A6D8F430054CA97 /* LegoApi.swift */; };
-		C05E864E2A6D8F640054CA97 /* UsearsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E864D2A6D8F640054CA97 /* UsearsAPI.swift */; };
 		C06456C22A65960100ACA921 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06456C12A65960100ACA921 /* Colors.swift */; };
 		C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FECED22A69BA4F005B22BD /* UserLocationController.swift */; };
 /* End PBXBuildFile section */
@@ -106,11 +102,7 @@
 		C05E863F2A6D24A00054CA97 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C05E86432A6D8E910054CA97 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		C05E86452A6D8EFB0054CA97 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		C05E86472A6D8F0F0054CA97 /* LegoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoError.swift; sourceTree = "<group>"; };
 		C05E86492A6D8F2D0054CA97 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		C05E864B2A6D8F430054CA97 /* LegoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoApi.swift; sourceTree = "<group>"; };
-		C05E864D2A6D8F640054CA97 /* UsearsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsearsAPI.swift; sourceTree = "<group>"; };
 		C06456C12A65960100ACA921 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C0FECED22A69BA4F005B22BD /* UserLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,12 +244,8 @@
 		C05E75782A5F319500646EDB /* API */ = {
 			isa = PBXGroup;
 			children = (
-				C05A99972A6D9B9F00903BC5 /* Models */,
 				C05E86432A6D8E910054CA97 /* APIManager.swift */,
-				C05E86452A6D8EFB0054CA97 /* EndPoint.swift */,
-				C05E86472A6D8F0F0054CA97 /* LegoError.swift */,
-				C05E864B2A6D8F430054CA97 /* LegoApi.swift */,
-				C05E864D2A6D8F640054CA97 /* UsearsAPI.swift */,
+				C05A99972A6D9B9F00903BC5 /* Models */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -408,13 +396,11 @@
 				C0596B652A57307E00F783F9 /* AppDelegate.swift in Sources */,
 				C05A99B32A6D9C7400903BC5 /* PageResponce.swift in Sources */,
 				C0596B6F2A57307E00F783F9 /* LegoLink.xcdatamodeld in Sources */,
-				C05E864C2A6D8F430054CA97 /* LegoApi.swift in Sources */,
 				C05E86422A6D24BD0054CA97 /* CoreDataStack.swift in Sources */,
 				C05A999D2A6D9BD300903BC5 /* LegoElement.swift in Sources */,
 				C05A99992A6D9BB100903BC5 /* LegoBuild.swift in Sources */,
 				C06456C22A65960100ACA921 /* Colors.swift in Sources */,
 				C05E86402A6D24A00054CA97 /* DataModel.xcdatamodeld in Sources */,
-				C05E86482A6D8F0F0054CA97 /* LegoError.swift in Sources */,
 				C05A99B02A6D9C6100903BC5 /* LegoUserPart.swift in Sources */,
 				C04736092A5DC1BE00ED9116 /* SetsViewController.swift in Sources */,
 				C05A99A72A6D9C2300903BC5 /* LegoPartCategory.swift in Sources */,
@@ -425,7 +411,6 @@
 				C05B1C7B2A5B429000DC8F48 /* MapViewController.swift in Sources */,
 				C0596B992A57318700F783F9 /* ScanerViewController.swift in Sources */,
 				C05E75772A5F313B00646EDB /* DetailedSet.swift in Sources */,
-				C05E86462A6D8EFB0054CA97 /* EndPoint.swift in Sources */,
 				C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */,
 				C05E864A2A6D8F2D0054CA97 /* Extensions.swift in Sources */,
 				C0596B9F2A57323400F783F9 /* TabBarController.swift in Sources */,
@@ -436,7 +421,6 @@
 				C0596B9D2A5731B400F783F9 /* PersonalViewController.swift in Sources */,
 				C05E757D2A5F324E00646EDB /* DetailesSet.swift in Sources */,
 				C05A99A12A6D9BFE00903BC5 /* LegoInventorySet.swift in Sources */,
-				C05E864E2A6D8F640054CA97 /* UsearsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

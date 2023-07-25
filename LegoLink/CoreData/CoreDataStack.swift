@@ -8,14 +8,18 @@
 import CoreData
 
 class CoreDataStack {
-    private let modelName: String
-
-    init(modelName: String) {
-        self.modelName = modelName
+//    private let modelName: String
+    
+    let shared: CoreDataStack = CoreDataStack()
+//    private init(modelName: String) {
+//        self.modelName = modelName
+//    }
+    
+    private init() {
     }
-
+    
     private lazy var storeContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: self.modelName)
+        let container = NSPersistentContainer()
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 print("Unresolved error \(error), \(error.userInfo)")
@@ -33,5 +37,8 @@ class CoreDataStack {
         } catch let error as NSError {
             print("Unresolved error \(error), \(error.userInfo)")
         }
+    }
+    func createModel() -> LegoSet {
+        LegoSet(context: persistentContainer.viewContext)
     }
 }

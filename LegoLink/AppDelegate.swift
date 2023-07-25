@@ -37,13 +37,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
-
-        let container = NSPersistentContainer(name: "LegoLink")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+//    lazy var persistentContainer: NSPersistentContainer = {
+//
+//        let container = NSPersistentContainer(name: "LegoLink")
+//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+//            if let error = error as NSError? {
+//
+//                fatalError("Unresolved error \(error), \(error.userInfo)")
+//            }
+//        })
+//        return container
+//    }()
+    
+    var persistentContainer: NSPersistentContainer = {
+        let storeURL = URL.storeURL(for: "group.Sprawdzam", databaseName: "DataModel")
+             let storeDescription = NSPersistentStoreDescription(url: storeURL)
+             let container = NSPersistentContainer(name: "DataModel")
+             container.persistentStoreDescriptions = [storeDescription]
+        container.loadPersistentStores(completionHandler: { storeDescription, error in
             if let error = error as NSError? {
-
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                print(error)
             }
         })
         return container

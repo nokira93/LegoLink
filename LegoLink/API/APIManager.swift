@@ -5,67 +5,86 @@
 //  Created by Artur Jurkowski on 23/07/2023.
 //
 
-import Foundation
+import UIKit
 import Combine
+import CoreData
 
-final class APIManager {
-    private let apiKey: String
 
-    init(apiKey: String) {
-        self.apiKey = apiKey
-    }
-
-    public func makeRequest(to url: URL, httpBody parameters: [String: String] = [:], withHttpMethod httpMethod: HttpMethod) -> URLSession.DataTaskPublisher {
-        let urlRequest = prepareRequest(with: url, parameters: parameters, httpMethod: httpMethod)
-        return URLSession.shared.dataTaskPublisher(for: urlRequest)
-    }
-
-    private func prepareRequest(with url: URL, parameters: [String: String], httpMethod: HttpMethod) -> URLRequest {
-        var urlReqest = URLRequest(url: url)
-        urlReqest.httpMethod = httpMethod.rawValue
-        urlReqest.setValue("application/json", forHTTPHeaderField: "Accept")
-        urlReqest.setValue("key \(apiKey)", forHTTPHeaderField: "Authorization")
-        urlReqest.httpBody = getHttpBody(with: parameters)
-        return urlReqest
-    }
-
-    private func getHttpBody(with parameters: [String: String]) -> Data? {
-        guard !parameters.isEmpty else { return nil }
-        return try? JSONSerialization.data(withJSONObject: parameters, options: [.prettyPrinted, .sortedKeys])
-    }
+protocol ApiProviderDelegate {
+    func didUpdate(_ manager: APIManager, sets: LegoSet)
+    func didFailWithError(error: Error)
 }
 
-extension APIManager {
-    func getItem<T: Codable>(with url: URL) -> AnyPublisher<T, LegoError> {
-        makeRequest(to: url, withHttpMethod: .get)
-            .map { $0.data }
-            .decode(type: T.self, decoder: JSONDecoder())
-            .mapToLegoError()
-            .eraseToAnyPublisher()
-    }
+class APIManager {
 
-    func getResults<T: Codable & Hashable>(with url: URL) -> AnyPublisher<[T], LegoError> {
-        let pageResponse: AnyPublisher<PageResponse<T>, LegoError> = getItem(with: url)
-        return pageResponse
-            .map { $0.results }
-            .eraseToAnyPublisher()
+    let delegate: ApiProviderDelegate?
+    var saved: [LegoSet] = []
+    
+    func fetchWeatcher(setName: String) {
+        let urlString =  "\(apiURL)&search=\(setName)"
+        performRequest(with: urlString)
     }
+    
+    func performRequest(with urlString: String) {
+        if let url = URL(string: urlString){
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { (data, response, error) in
+                if error != nil {
+                    self.delegate?.didFailWithError(error: error!)
+                    return
+                }
+                if let safeData = data {
+                    if let letoSet = self.parseJSON(safeData){
+                        self.delegate?.didUpdate(self, sets: letoSet)
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    func parseJSON(_ data: Data) -> LegoSet?{
 
-    public func request<T: Codable & Hashable>(to url: URL, httpBody parameters: [String: String] = [:], withHttpMethod httpMethod: HttpMethod) -> AnyPublisher<T, LegoError> {
-    makeRequest(to: Endpoint.tokenUrl, httpBody: parameters, withHttpMethod: httpMethod)
-        .map { $0.data }
-        .decode(type: T.self, decoder: JSONDecoder())
-        .mapToLegoError()
-        .eraseToAnyPublisher()
+        let decoder = JSONDecoder()
+        do {
+            let decodeData = try decoder.decode(LegoSet.self, from: data)
+            let legoSet: LegoSet
+
+            legoSet = CoreDataStack.shared.createrWeatherModel()
+            
+           weather.cityName = decodeData.location.name
+           weather.country = decodeData.location.country
+            weather.gps = GPS
+            
+            let data = CoreDataStack.shared.createWeatherData()
+            data.parentCategory = weather
+            data.isDay = Int16(decodeData.current.is_day)
+            let icon = decodeData.current.condition.icon.dropLast(4)
+            data.icon = String(icon.dropFirst(35))
+            data.temperature = decodeData.current.temp_c
+            
+            savedCity()
+            
+            return weather
+        } catch {
+            delegate?.didFailWithError(error: error)
+            return nil
+        }
     }
+    
+    private func getGPSLocation() -> WeatherModel?{
+            let locations = CoreDataStack.shared.getStoredDataFromCoreData()
+            return locations?.first(where: {$0.gps})
+       }
+    
+    func savedCity() {
+        CoreDataStack.shared.saveContext()
+    }
+    
+    func loadCity() {
+            saved = CoreDataStack.shared.getStoredDataFromCoreData() ?? []
+    }
+  
+
 }
 
-extension APIManager {
-    public enum HttpMethod: String {
-        case get = "GET"
-        case post = "POST"
-        case put = "PUT"
-        case patch = "PATCH"
-        case delete = "DELETE"
-    }
-}
