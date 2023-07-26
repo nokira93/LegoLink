@@ -31,68 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func sceneDidEnterBackground(_ scene: UIScene) {
-
-        AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
     }
-    
-    // MARK: - Core Data stack
-
-//    lazy var persistentContainer: NSPersistentContainer = {
-//
-//        let container = NSPersistentContainer(name: "LegoLink")
-//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-//            if let error = error as NSError? {
-//
-//                fatalError("Unresolved error \(error), \(error.userInfo)")
-//            }
-//        })
-//        return container
-//    }()
-    
-    var persistentContainer: NSPersistentContainer = {
-        let storeURL = URL.storeURL(for: "group.Sprawdzam", databaseName: "DataModel")
-             let storeDescription = NSPersistentStoreDescription(url: storeURL)
-             let container = NSPersistentContainer(name: "DataModel")
-             container.persistentStoreDescriptions = [storeDescription]
-        container.loadPersistentStores(completionHandler: { storeDescription, error in
-            if let error = error as NSError? {
-                print(error)
-            }
-        })
-        return container
-    }()
-
-    // MARK: - Core Data Saving support
-
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-    
-    lazy var coreDataStack: CoreDataStack = .init(modelName: "Notes")
-
-        static let sharedAppDelegate: AppDelegate = {
-            guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
-                fatalError("Unexpected app delegate type, did it change? \(String(describing: UIApplication.shared.delegate))")
-            }
-            return delegate
-        }()
-
-//        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//
-//            // ...
-//
-//            return true
-//        }
-
 }
 

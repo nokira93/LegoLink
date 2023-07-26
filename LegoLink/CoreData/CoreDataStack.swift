@@ -10,13 +10,27 @@ import CoreData
 class CoreDataStack {
 //    private let modelName: String
     
-    let shared: CoreDataStack = CoreDataStack()
+    static let shared: CoreDataStack = CoreDataStack()
 //    private init(modelName: String) {
 //        self.modelName = modelName
 //    }
-    
     private init() {
-    }
+}
+
+    var persistentContainer: NSPersistentContainer = {
+        let storeURL = URL.storeURL(for: "group.LegoSetModel", databaseName: "DataModel")
+             let storeDescription = NSPersistentStoreDescription(url: storeURL)
+             let container = NSPersistentContainer(name: "DataModel")
+             container.persistentStoreDescriptions = [storeDescription]
+        container.loadPersistentStores(completionHandler: { storeDescription, error in
+            if let error = error as NSError? {
+                print(error)
+            }
+        })
+        return container
+    }()
+
+
     
     private lazy var storeContainer: NSPersistentContainer = {
         let container = NSPersistentContainer()
@@ -38,7 +52,20 @@ class CoreDataStack {
             print("Unresolved error \(error), \(error.userInfo)")
         }
     }
-    func createModel() -> LegoSet {
-        LegoSet(context: persistentContainer.viewContext)
+    func createModel() -> LegoSetModel {
+        LegoSetModel(context: persistentContainer.viewContext)
     }
+    
+    func getStoredDataFromCoreData() -> [LegoSetModel]? {
+            let managedContext = persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LegoSetModel")
+            do {
+                return try managedContext.fetch(fetchRequest) as? [LegoSetModel]
+ 
+            } catch{
+                return nil
+
+            }
+        }
 }

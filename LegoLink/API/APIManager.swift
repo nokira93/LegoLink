@@ -11,14 +11,14 @@ import CoreData
 
 
 protocol ApiProviderDelegate {
-    func didUpdate(_ manager: APIManager, sets: LegoSet)
+    func didUpdate(_ manager: APIManager, sets: LegoSetModel)
     func didFailWithError(error: Error)
 }
 
 class APIManager {
 
-    let delegate: ApiProviderDelegate?
-    var saved: [LegoSet] = []
+    let delegate: ApiProviderDelegate? = nil
+    var saved: [LegoSetModel] = []
     
     func fetchWeatcher(setName: String) {
         let urlString =  "\(apiURL)&search=\(setName)"
@@ -43,46 +43,36 @@ class APIManager {
         }
     }
     
-    func parseJSON(_ data: Data) -> LegoSet?{
+    func parseJSON(_ data: Data) -> LegoSetModel?{
 
         let decoder = JSONDecoder()
         do {
             let decodeData = try decoder.decode(LegoSet.self, from: data)
-            let legoSet: LegoSet
-
-            legoSet = CoreDataStack.shared.createrWeatherModel()
+            let legoSet: LegoSetModel
+   
+            legoSet = CoreDataStack.shared.createModel()
             
-           weather.cityName = decodeData.location.name
-           weather.country = decodeData.location.country
-            weather.gps = GPS
+//           weather.cityName = decodeData.location.name
+//           weather.country = decodeData.location.country
+//            weather.gps = GPS
             
-            let data = CoreDataStack.shared.createWeatherData()
-            data.parentCategory = weather
-            data.isDay = Int16(decodeData.current.is_day)
-            let icon = decodeData.current.condition.icon.dropLast(4)
-            data.icon = String(icon.dropFirst(35))
-            data.temperature = decodeData.current.temp_c
             
-            savedCity()
+            saveLego()
             
-            return weather
+            return legoSet
         } catch {
             delegate?.didFailWithError(error: error)
             return nil
         }
     }
+
     
-    private func getGPSLocation() -> WeatherModel?{
-            let locations = CoreDataStack.shared.getStoredDataFromCoreData()
-            return locations?.first(where: {$0.gps})
-       }
-    
-    func savedCity() {
+    func saveLego() {
         CoreDataStack.shared.saveContext()
     }
     
-    func loadCity() {
-            saved = CoreDataStack.shared.getStoredDataFromCoreData() ?? []
+    func loadLego() {
+        saved = CoreDataStack.shared.getStoredDataFromCoreData() ?? []
     }
   
 
