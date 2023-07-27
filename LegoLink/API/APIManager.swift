@@ -17,11 +17,11 @@ protocol ApiProviderDelegate {
 
 class APIManager {
 
-    let delegate: ApiProviderDelegate? = nil
+    var delegate: ApiProviderDelegate?
     var saved: [LegoSetModel] = []
     
     func fetchWeatcher(setName: String) {
-        let urlString =  "\(apiURL)&search=\(setName)"
+        let urlString =  "\(ApiKey.apiURL)&search=\(setName)"
         performRequest(with: urlString)
     }
     
@@ -52,11 +52,16 @@ class APIManager {
    
             legoSet = CoreDataStack.shared.createModel()
             
-//           weather.cityName = decodeData.location.name
-//           weather.country = decodeData.location.country
-//            weather.gps = GPS
+            legoSet.name = decodeData.name
+            legoSet.themeID = Int16(decodeData.theme_id ?? 0)
+            legoSet.numParts = Int16(decodeData.num_parts)
+            legoSet.year = Int16(decodeData.year ?? 1990)
+            legoSet.setImageURL = decodeData.set_img_url
+            legoSet.setNum = decodeData.set_num
+            legoSet.setURL = decodeData.set_url
             
-            
+            legoSet.data = Int32(Date().timeIntervalSince1970)
+
             saveLego()
             
             return legoSet

@@ -41,7 +41,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         observeCoordinateUpdates()
         obserLocationAccessDenied()
         deviceLocationService.requestLocationUpdates()
-        print("Dupa \(coordinate.latitude) || \(coordinate.longitude)")
     }
     
     

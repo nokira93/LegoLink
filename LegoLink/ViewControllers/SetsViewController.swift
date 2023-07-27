@@ -9,11 +9,19 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class SetsViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class SetsViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, ApiProviderDelegate {
+    func didUpdate(_ manager: APIManager, sets: LegoSetModel) {
+        print(sets)
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
     
         var setCollectionView: UICollectionView?
     var allSeries = SeriesTypes.allCases
-    
+    var apIManager = APIManager()
     let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 10
@@ -29,7 +37,8 @@ class SetsViewController: UIViewController,UICollectionViewDelegate,UICollection
             view.backgroundColor = Colors.backgroundColor
             setCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
             setCollectionView?.backgroundColor = .clear
-
+            
+            apIManager.delegate = self
             setCollectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
 
             view.addSubview(setCollectionView ?? UICollectionView())
@@ -68,6 +77,7 @@ extension SetsViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let secondViewController:DetailedSet = DetailedSet()
+        apIManager.fetchWeatcher(setName: "Harry%20Potter")
         self.present(secondViewController, animated: true, completion: nil)
     }
 }

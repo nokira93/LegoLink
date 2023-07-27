@@ -37,14 +37,13 @@
 		C05DB40C2A6473E200A8747F /* MapAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05DB40B2A6473E200A8747F /* MapAssets.xcassets */; };
 		C05E75772A5F313B00646EDB /* DetailedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E75762A5F313B00646EDB /* DetailedSet.swift */; };
 		C05E757D2A5F324E00646EDB /* DetailesSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E757B2A5F324E00646EDB /* DetailesSet.swift */; };
-		C05E757E2A5F324E00646EDB /* DetailesSet.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05E757C2A5F324E00646EDB /* DetailesSet.xib */; };
 		C05E86402A6D24A00054CA97 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C05E863E2A6D24A00054CA97 /* DataModel.xcdatamodeld */; };
 		C05E86422A6D24BD0054CA97 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */; };
 		C05E86442A6D8E910054CA97 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86432A6D8E910054CA97 /* APIManager.swift */; };
 		C05E864A2A6D8F2D0054CA97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86492A6D8F2D0054CA97 /* Extensions.swift */; };
 		C06456C22A65960100ACA921 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06456C12A65960100ACA921 /* Colors.swift */; };
 		C07055612A718EBC00AB733A /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07055602A718EBC00AB733A /* URLExtension.swift */; };
-		C07055632A718F7900AB733A /* LegoSetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07055622A718F7900AB733A /* LegoSetModel.swift */; };
+		C07055652A71A1DD00AB733A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07055642A71A1DD00AB733A /* APIKey.swift */; };
 		C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FECED22A69BA4F005B22BD /* UserLocationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,14 +99,13 @@
 		C05DB40B2A6473E200A8747F /* MapAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MapAssets.xcassets; sourceTree = "<group>"; };
 		C05E75762A5F313B00646EDB /* DetailedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSet.swift; sourceTree = "<group>"; };
 		C05E757B2A5F324E00646EDB /* DetailesSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesSet.swift; sourceTree = "<group>"; };
-		C05E757C2A5F324E00646EDB /* DetailesSet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailesSet.xib; sourceTree = "<group>"; };
 		C05E863F2A6D24A00054CA97 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C05E86432A6D8E910054CA97 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		C05E86492A6D8F2D0054CA97 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C06456C12A65960100ACA921 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C07055602A718EBC00AB733A /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
-		C07055622A718F7900AB733A /* LegoSetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoSetModel.swift; sourceTree = "<group>"; };
+		C07055642A71A1DD00AB733A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		C0FECED22A69BA4F005B22BD /* UserLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,7 +203,6 @@
 				C05B1C7A2A5B429000DC8F48 /* MapViewController.swift */,
 				C04736082A5DC1BE00ED9116 /* SetsViewController.swift */,
 				C05E757B2A5F324E00646EDB /* DetailesSet.swift */,
-				C05E757C2A5F324E00646EDB /* DetailesSet.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -249,6 +246,7 @@
 		C05E75782A5F319500646EDB /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C07055642A71A1DD00AB733A /* APIKey.swift */,
 				C05E86432A6D8E910054CA97 /* APIManager.swift */,
 				C05A99972A6D9B9F00903BC5 /* Models */,
 			);
@@ -260,7 +258,6 @@
 			children = (
 				C05E863E2A6D24A00054CA97 /* DataModel.xcdatamodeld */,
 				C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */,
-				C07055622A718F7900AB733A /* LegoSetModel.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -379,7 +376,6 @@
 			files = (
 				C05DB40C2A6473E200A8747F /* MapAssets.xcassets in Resources */,
 				C0596B712A57307F00F783F9 /* Assets.xcassets in Resources */,
-				C05E757E2A5F324E00646EDB /* DetailesSet.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +415,7 @@
 				C04736092A5DC1BE00ED9116 /* SetsViewController.swift in Sources */,
 				C05A99A72A6D9C2300903BC5 /* LegoPartCategory.swift in Sources */,
 				C05A99A32A6D9C0B00903BC5 /* LegoLostPart.swift in Sources */,
-				C07055632A718F7900AB733A /* LegoSetModel.swift in Sources */,
+				C07055652A71A1DD00AB733A /* APIKey.swift in Sources */,
 				C0596B672A57307E00F783F9 /* SceneDelegate.swift in Sources */,
 				C05A99A92A6D9C3000903BC5 /* LegoPartColor.swift in Sources */,
 				C05A99AD2A6D9C4C00903BC5 /* LegoTheme.swift in Sources */,

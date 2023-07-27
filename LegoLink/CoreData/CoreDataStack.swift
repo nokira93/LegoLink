@@ -8,12 +8,9 @@
 import CoreData
 
 class CoreDataStack {
-//    private let modelName: String
     
     static let shared: CoreDataStack = CoreDataStack()
-//    private init(modelName: String) {
-//        self.modelName = modelName
-//    }
+
     private init() {
 }
 

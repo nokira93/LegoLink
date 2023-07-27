@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="LegoSetModel" representedClassName=".LegoSetModel" syncable="YES" codeGenerationType="class">
-        <attribute name="data" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="data" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="numParts" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="setImageURL" optional="YES" attributeType="String"/>
