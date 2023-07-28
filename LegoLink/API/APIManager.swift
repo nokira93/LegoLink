@@ -42,7 +42,6 @@ class APIManager {
             task.resume()
         }
     }
-    
     func parseJSON(_ data: Data) -> LegoSetModel?{
 
         let decoder = JSONDecoder()

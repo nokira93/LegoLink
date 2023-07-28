@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C04736092A5DC1BE00ED9116 /* SetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04736082A5DC1BE00ED9116 /* SetsViewController.swift */; };
+		C05188362A72FFB000C544D8 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05188352A72FFB000C544D8 /* ApiKey.swift */; };
 		C0596B652A57307E00F783F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0596B642A57307E00F783F9 /* AppDelegate.swift */; };
 		C0596B672A57307E00F783F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0596B662A57307E00F783F9 /* SceneDelegate.swift */; };
 		C0596B692A57307E00F783F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0596B682A57307E00F783F9 /* ViewController.swift */; };
@@ -43,7 +44,6 @@
 		C05E864A2A6D8F2D0054CA97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86492A6D8F2D0054CA97 /* Extensions.swift */; };
 		C06456C22A65960100ACA921 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06456C12A65960100ACA921 /* Colors.swift */; };
 		C07055612A718EBC00AB733A /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07055602A718EBC00AB733A /* URLExtension.swift */; };
-		C07055652A71A1DD00AB733A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07055642A71A1DD00AB733A /* APIKey.swift */; };
 		C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FECED22A69BA4F005B22BD /* UserLocationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		C04736082A5DC1BE00ED9116 /* SetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsViewController.swift; sourceTree = "<group>"; };
+		C05188352A72FFB000C544D8 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		C0596B612A57307E00F783F9 /* LegoLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegoLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0596B642A57307E00F783F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0596B662A57307E00F783F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +106,6 @@
 		C05E86492A6D8F2D0054CA97 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C06456C12A65960100ACA921 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C07055602A718EBC00AB733A /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
-		C07055642A71A1DD00AB733A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		C0FECED22A69BA4F005B22BD /* UserLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,9 +246,9 @@
 		C05E75782A5F319500646EDB /* API */ = {
 			isa = PBXGroup;
 			children = (
-				C07055642A71A1DD00AB733A /* APIKey.swift */,
 				C05E86432A6D8E910054CA97 /* APIManager.swift */,
 				C05A99972A6D9B9F00903BC5 /* Models */,
+				C05188352A72FFB000C544D8 /* ApiKey.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -404,6 +404,7 @@
 				C0596B692A57307E00F783F9 /* ViewController.swift in Sources */,
 				C05E86442A6D8E910054CA97 /* APIManager.swift in Sources */,
 				C0596B652A57307E00F783F9 /* AppDelegate.swift in Sources */,
+				C05188362A72FFB000C544D8 /* ApiKey.swift in Sources */,
 				C05A99B32A6D9C7400903BC5 /* PageResponce.swift in Sources */,
 				C0596B6F2A57307E00F783F9 /* LegoLink.xcdatamodeld in Sources */,
 				C05E86422A6D24BD0054CA97 /* CoreDataStack.swift in Sources */,
@@ -415,7 +416,6 @@
 				C04736092A5DC1BE00ED9116 /* SetsViewController.swift in Sources */,
 				C05A99A72A6D9C2300903BC5 /* LegoPartCategory.swift in Sources */,
 				C05A99A32A6D9C0B00903BC5 /* LegoLostPart.swift in Sources */,
-				C07055652A71A1DD00AB733A /* APIKey.swift in Sources */,
 				C0596B672A57307E00F783F9 /* SceneDelegate.swift in Sources */,
 				C05A99A92A6D9C3000903BC5 /* LegoPartColor.swift in Sources */,
 				C05A99AD2A6D9C4C00903BC5 /* LegoTheme.swift in Sources */,
