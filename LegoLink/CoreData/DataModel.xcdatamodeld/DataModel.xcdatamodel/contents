@@ -5,7 +5,7 @@
         <attribute name="name" attributeType="String"/>
         <attribute name="numParts" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="setImageURL" optional="YES" attributeType="String"/>
-        <attribute name="setNum" optional="YES" attributeType="String"/>
+        <attribute name="setNum" attributeType="String"/>
         <attribute name="setURL" optional="YES" attributeType="String"/>
         <attribute name="themeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

@@ -76,8 +76,9 @@ extension SetsViewController {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let secondViewController:DetailedSet = DetailedSet()
+        let secondViewController = ListOfSets()
         apIManager.fetchWeatcher(setName: "Harry%20Potter")
+
         self.present(secondViewController, animated: true, completion: nil)
     }
 }

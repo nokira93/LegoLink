@@ -21,7 +21,7 @@ class APIManager {
     var saved: [LegoSetModel] = []
     
     func fetchWeatcher(setName: String) {
-        let urlString =  "\(ApiKey.apiURL)&search=\(setName)"
+        let urlString =  "\(ApiKey.url)&search=\(setName)"
         performRequest(with: urlString)
     }
     
@@ -42,28 +42,33 @@ class APIManager {
             task.resume()
         }
     }
-    func parseJSON(_ data: Data) -> LegoSetModel?{
+    func parseJSON(_ data: Data) -> LegoSetModel? {
 
         let decoder = JSONDecoder()
+        var legoArr: [LegoSetModel] = []
         do {
-            let decodeData = try decoder.decode(LegoSet.self, from: data)
-            let legoSet: LegoSetModel
-   
-            legoSet = CoreDataStack.shared.createModel()
-            
-            legoSet.name = decodeData.name
-            legoSet.themeID = Int16(decodeData.theme_id ?? 0)
-            legoSet.numParts = Int16(decodeData.num_parts)
-            legoSet.year = Int16(decodeData.year ?? 1990)
-            legoSet.setImageURL = decodeData.set_img_url
-            legoSet.setNum = decodeData.set_num
-            legoSet.setURL = decodeData.set_url
-            
-            legoSet.data = Int32(Date().timeIntervalSince1970)
+            let decodeData = try decoder.decode(PageResponse<LegoSet>.self, from: data)
+            let lego = decodeData.results[0]
+                let legoSet: LegoSetModel
 
-            saveLego()
+                legoSet = CoreDataStack.shared.createModel()
+
+                legoSet.name = lego.name
+                legoSet.themeID = Int16(lego.theme_id ?? 0)
+                legoSet.numParts = Int16(lego.num_parts)
+                legoSet.year = Int16(lego.year ?? 1990)
+                legoSet.setImageURL = lego.set_img_url
+                legoSet.setNum = lego.set_num
+                legoSet.setURL = lego.set_url
+
+                legoSet.data = Int32(Date().timeIntervalSince1970)
+
+                legoArr.append(legoSet)
+                saveLego()
+                return legoSet
             
-            return legoSet
+            
+//            return legoArr
         } catch {
             delegate?.didFailWithError(error: error)
             return nil
