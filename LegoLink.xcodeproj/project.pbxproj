@@ -44,6 +44,7 @@
 		C05E86422A6D24BD0054CA97 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */; };
 		C05E86442A6D8E910054CA97 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86432A6D8E910054CA97 /* APIManager.swift */; };
 		C05E864A2A6D8F2D0054CA97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86492A6D8F2D0054CA97 /* Extensions.swift */; };
+		C063D0B62A8E8E3600F3E885 /* SetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063D0B52A8E8E3600F3E885 /* SetsCell.swift */; };
 		C06456C22A65960100ACA921 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06456C12A65960100ACA921 /* Colors.swift */; };
 		C07055612A718EBC00AB733A /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07055602A718EBC00AB733A /* URLExtension.swift */; };
 		C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FECED22A69BA4F005B22BD /* UserLocationController.swift */; };
@@ -108,6 +109,7 @@
 		C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C05E86432A6D8E910054CA97 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		C05E86492A6D8F2D0054CA97 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C063D0B52A8E8E3600F3E885 /* SetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsCell.swift; sourceTree = "<group>"; };
 		C06456C12A65960100ACA921 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C07055602A718EBC00AB733A /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		C0FECED22A69BA4F005B22BD /* UserLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		C0596B632A57307E00F783F9 /* LegoLink */ = {
 			isa = PBXGroup;
 			children = (
+				C063D0B42A8E8E2700F3E885 /* Cells */,
 				C00C445D2A8D4C04007068F1 /* Constants */,
 				C070555F2A718EB100AB733A /* Extensions */,
 				C05E863D2A6D24870054CA97 /* CoreData */,
@@ -274,6 +277,14 @@
 				C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		C063D0B42A8E8E2700F3E885 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C063D0B52A8E8E3600F3E885 /* SetsCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		C070555F2A718EB100AB733A /* Extensions */ = {
@@ -435,6 +446,7 @@
 				C05A99AD2A6D9C4C00903BC5 /* LegoTheme.swift in Sources */,
 				C05B1C7B2A5B429000DC8F48 /* MapViewController.swift in Sources */,
 				C0596B992A57318700F783F9 /* ScanerViewController.swift in Sources */,
+				C063D0B62A8E8E3600F3E885 /* SetsCell.swift in Sources */,
 				C05E75772A5F313B00646EDB /* DetailedSet.swift in Sources */,
 				C00C445F2A8D4C12007068F1 /* Constraints.swift in Sources */,
 				C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */,

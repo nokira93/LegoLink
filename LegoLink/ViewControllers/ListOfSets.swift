@@ -8,7 +8,6 @@
 import UIKit
 import CoreData
 
-//class ListOfSets: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var picker = UIPickerView()
@@ -27,6 +26,7 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate {
         dataSource = CoreDataStack.shared.getStoredDataFromCoreData()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(SetsCell.self, forCellReuseIdentifier: SetsCell.identifier)
 //        picker.dataSource = self
 //        picker.delegate = self
     }
@@ -49,6 +49,8 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate {
         searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -1 * Constraints.horizontalPadding).isActive = true
         searchBar.layer.cornerRadius = 25
         searchBar.backgroundColor = .systemGray4
+        searchBar.backgroundImage = UIImage()
+        searchBar.backgroundColor = .white
         
         view.addSubview(numPicker)
         numPicker.translatesAutoresizingMaskIntoConstraints = false
@@ -91,11 +93,19 @@ extension ListOfSets {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let myCell = UITableViewCell(style: .subtitle , reuseIdentifier: nil)
-        myCell.contentView.backgroundColor = .blue
         
-        myCell.textLabel?.text = dataSource?[indexPath.row].name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SetsCell.identifier, for: indexPath) as? SetsCell else {
+            fatalError("Error")
+        }
+        cell.setUpView(url: dataSource?[indexPath.row].setURL ?? "https://rebrickable.com/home/", name: dataSource?[indexPath.row].name ?? "-", numOfParts: dataSource?[indexPath.row].numParts ?? 0, imageURL: dataSource?[indexPath.row].setImageURL ?? "-", setNum: dataSource?[indexPath.row].setNum ?? "-")
+//        let myCell = UITableViewCell(style: .subtitle , reuseIdentifier: nil)
+//        myCell.contentView.backgroundColor = .blue
+//
+//        myCell.textLabel?.text = dataSource?[indexPath.row].name
         
-        return myCell
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
     }
 }
