@@ -10,6 +10,8 @@
 		C00C445C2A8D4909007068F1 /* ListOfSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C445B2A8D4909007068F1 /* ListOfSets.swift */; };
 		C00C445F2A8D4C12007068F1 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C445E2A8D4C12007068F1 /* Constraints.swift */; };
 		C04736092A5DC1BE00ED9116 /* SetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04736082A5DC1BE00ED9116 /* SetsViewController.swift */; };
+		C04BFF492A9277BD00AE6CAD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = C04BFF482A9277BD00AE6CAD /* SDWebImage */; };
+		C04BFF4B2A9277BD00AE6CAD /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C04BFF4A2A9277BD00AE6CAD /* SDWebImageMapKit */; };
 		C05188362A72FFB000C544D8 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05188352A72FFB000C544D8 /* ApiKey.swift */; };
 		C0596B652A57307E00F783F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0596B642A57307E00F783F9 /* AppDelegate.swift */; };
 		C0596B672A57307E00F783F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0596B662A57307E00F783F9 /* SceneDelegate.swift */; };
@@ -120,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C04BFF4B2A9277BD00AE6CAD /* SDWebImageMapKit in Frameworks */,
+				C04BFF492A9277BD00AE6CAD /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +315,10 @@
 			dependencies = (
 			);
 			name = LegoLink;
+			packageProductDependencies = (
+				C04BFF482A9277BD00AE6CAD /* SDWebImage */,
+				C04BFF4A2A9277BD00AE6CAD /* SDWebImageMapKit */,
+			);
 			productName = LegoLink;
 			productReference = C0596B612A57307E00F783F9 /* LegoLink.app */;
 			productType = "com.apple.product-type.application";
@@ -383,6 +391,9 @@
 				Base,
 			);
 			mainGroup = C0596B582A57307E00F783F9;
+			packageReferences = (
+				C04BFF472A9277BD00AE6CAD /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = C0596B622A57307E00F783F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -781,6 +792,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C04BFF472A9277BD00AE6CAD /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C04BFF482A9277BD00AE6CAD /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C04BFF472A9277BD00AE6CAD /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		C04BFF4A2A9277BD00AE6CAD /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C04BFF472A9277BD00AE6CAD /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C0596B6D2A57307E00F783F9 /* LegoLink.xcdatamodeld */ = {

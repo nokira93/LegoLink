@@ -58,7 +58,8 @@ extension SetsViewController {
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
 
         let imageview:UIImageView = UIImageView()
-
+        imageview.backgroundColor = .clear
+        myCell.backgroundColor = .clear
         imageview.contentMode = .scaleToFill
         let image:UIImage = UIImage(named: allSeries[indexPath.row].rawValue) ?? UIImage()
         imageview.image = image

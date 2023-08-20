@@ -22,8 +22,9 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate {
     init(){
         super.init(nibName: nil, bundle: nil)
         setUpPickersConstraints()
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = UIColor(red: 57/255, green: 57/255, blue: 56/255, alpha: 1)
         dataSource = CoreDataStack.shared.getStoredDataFromCoreData()
+        tableView.backgroundColor = .clear
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(SetsCell.self, forCellReuseIdentifier: SetsCell.identifier)
@@ -92,12 +93,14 @@ extension ListOfSets {
         return itemsPerPage
     }
     
+  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SetsCell.identifier, for: indexPath) as? SetsCell else {
             fatalError("Error")
         }
         cell.setUpView(url: dataSource?[indexPath.row].setURL ?? "https://rebrickable.com/home/", name: dataSource?[indexPath.row].name ?? "-", numOfParts: dataSource?[indexPath.row].numParts ?? 0, imageURL: dataSource?[indexPath.row].setImageURL ?? "-", setNum: dataSource?[indexPath.row].setNum ?? "-")
+        cell.backgroundColor = .clear
 //        let myCell = UITableViewCell(style: .subtitle , reuseIdentifier: nil)
 //        myCell.contentView.backgroundColor = .blue
 //
@@ -106,6 +109,6 @@ extension ListOfSets {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        SizeOfCell.height
     }
 }

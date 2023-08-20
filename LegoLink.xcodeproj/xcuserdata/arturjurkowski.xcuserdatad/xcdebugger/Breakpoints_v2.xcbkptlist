@@ -55,54 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8E2B780A-5D81-4E7F-A737-6F75A6536792"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoLink/API/APIManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "parseJSON(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8E2B780A-5D81-4E7F-A737-6F75A6536792 - cfc028fd43146855"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LegoLink.APIManager.parseJSON(Foundation.Data) -&gt; Swift.Optional&lt;Swift.Array&lt;LegoLink.LegoSetModel&gt;&gt;"
-                  moduleName = "LegoLink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturjurkowski/LegoLink/LegoLink/API/APIManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  uuid = "8E2B780A-5D81-4E7F-A737-6F75A6536792 - cfc028fd43146834"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LegoLink.APIManager.parseJSON(Foundation.Data) -&gt; Swift.Optional&lt;Swift.Array&lt;LegoLink.LegoSetModel&gt;&gt;"
-                  moduleName = "LegoLink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturjurkowski/LegoLink/LegoLink/API/APIManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "204">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "692E1A00-6B5F-4683-B41A-3A7E058AF9D7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
