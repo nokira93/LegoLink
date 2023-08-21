@@ -7,29 +7,49 @@
 
 import UIKit
 import CoreData
+import SwiftUI
 
-class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var picker = UIPickerView()
+class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    var segmentPicker:UISegmentedControl = {
+        let segment = UISegmentedControl(items: ["25", "50", "100"])
+        segment.selectedSegmentIndex = 0
+        segment.backgroundColor = .systemGray4
+        segment.tintColor = .white
+        return segment
+    }()
+    let arr = [25, 50, 100]
+    let screenWidth = UIScreen.main.bounds.width
     var searchBar = UISearchBar()
     var searchButton = UIButton()
     var numPicker = UIPickerView()
     var filter = UIButton()
     var tableView = UITableView()
-    var itemsPerPage: Int = 30
+    var itemsPerPage: Int = 25
     var dataSource: [LegoSetModel]? = []
+    let scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        return scroll
+    }()
+    var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPage = 0
+        return pageControl
+    }()
     
     init(){
         super.init(nibName: nil, bundle: nil)
         setUpPickersConstraints()
         self.view.backgroundColor = UIColor(red: 57/255, green: 57/255, blue: 56/255, alpha: 1)
         dataSource = CoreDataStack.shared.getStoredDataFromCoreData()
+        pageControl.numberOfPages = (dataSource?.count ?? 0) / itemsPerPage
         tableView.backgroundColor = .clear
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.allowsSelection = false
         tableView.register(SetsCell.self, forCellReuseIdentifier: SetsCell.identifier)
-//        picker.dataSource = self
-//        picker.delegate = self
+        segmentPicker.addTarget(self, action: #selector(segmentedValueChanged(_:)), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
@@ -46,9 +66,9 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: Constraints.topPadding).isActive = true
         searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constraints.horizontalPadding).isActive = true
-        searchBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        searchBar.heightAnchor.constraint(equalToConstant: 40).isActive = true
         searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -1 * Constraints.horizontalPadding).isActive = true
-        searchBar.layer.cornerRadius = 25
+        searchBar.layer.cornerRadius = 20
         searchBar.backgroundColor = .systemGray4
         searchBar.backgroundImage = UIImage()
         searchBar.backgroundColor = .white
@@ -57,38 +77,53 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate {
         numPicker.translatesAutoresizingMaskIntoConstraints = false
         numPicker.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16).isActive = true
         numPicker.leadingAnchor.constraint(equalTo: searchBar.leadingAnchor).isActive = true
-        numPicker.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        numPicker.heightAnchor.constraint(equalToConstant: 40).isActive = true
         numPicker.widthAnchor.constraint(equalTo: searchBar.widthAnchor, multiplier: 0.55).isActive = true
-        numPicker.layer.cornerRadius = 25
+        numPicker.layer.cornerRadius = 20
         numPicker.backgroundColor = .systemGray4
         
         view.addSubview(searchButton)
         searchButton.translatesAutoresizingMaskIntoConstraints = false
         searchButton.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16).isActive = true
         searchButton.trailingAnchor.constraint(equalTo: searchBar.trailingAnchor).isActive = true
-        searchButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        searchButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         searchButton.leadingAnchor.constraint(equalTo: numPicker.trailingAnchor, constant: 16).isActive = true
-        searchButton.layer.cornerRadius = 25
+        searchButton.layer.cornerRadius = 20
         searchButton.backgroundColor = .systemGray4
         searchButton.setTitle("Search", for: .normal)
         searchButton.setTitleColor(.black, for: .normal)
         
+        view.addSubview(segmentPicker)
+        segmentPicker.translatesAutoresizingMaskIntoConstraints = false
+        segmentPicker.topAnchor.constraint(equalTo: searchButton.bottomAnchor, constant: 16).isActive = true
+        segmentPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constraints.horizontalPadding).isActive = true
+        segmentPicker.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        segmentPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -1 * Constraints.horizontalPadding).isActive = true
+        
+        view.addSubview(pageControl)
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.topAnchor.constraint(equalTo: segmentPicker.bottomAnchor, constant: 5).isActive = true
+        pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constraints.horizontalPadding).isActive = true
+        pageControl.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -1 * Constraints.horizontalPadding).isActive = true
+        
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: searchButton.bottomAnchor, constant: 16).isActive = true
+        tableView.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 5).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constraints.horizontalPadding).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -1 * Constraints.bottomPadding).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -1 * Constraints.horizontalPadding).isActive = true
     }
 }
 extension ListOfSets {
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        1
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        <#code#>
-//    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemsPerPage
     }
@@ -111,4 +146,10 @@ extension ListOfSets {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         SizeOfCell.height
     }
+    
+    @objc func segmentedValueChanged(_ sender:UISegmentedControl!) {
+        itemsPerPage = arr[sender.selectedSegmentIndex]
+        pageControl.numberOfPages = (dataSource?.count ?? 0) / itemsPerPage
+        tableView.reloadData()
+     }
 }

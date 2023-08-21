@@ -38,13 +38,11 @@ class SetsCell: UITableViewCell {
         label.layer.cornerRadius = 10
         return label
     }()
+    var url = ""
 //    var setNum: String
     var setView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-//        iv.image = UIImage(systemName: "figure.walk.circle")
-        iv.sd_setImage(with: URL(string: "https://cdn.rebrickable.com/media/sets/0756692571-1/17359.jpg"), placeholderImage: UIImage(named: "placeholder.png"))
-
         return iv
     }()
     
@@ -104,13 +102,15 @@ class SetsCell: UITableViewCell {
         //            self.url = url
         nameLabel.text = name
         partsLabel.text = "\(str) \(numOfParts)"
+        self.url = url
         //            self.name = name
         //            self.numOfParts = numOfParts
         //            self.setNum = setNum
+        setView.sd_setImage(with: URL(string: imageURL), placeholderImage: UIImage(named: "placeholder.png"))
         setUpConstraint()
     }
     @objc private func link() {
-        if let url = URL(string: "https://www.google.com") {
+        if let url = URL(string: url) {
             UIApplication.shared.open(url)
         }
     }
