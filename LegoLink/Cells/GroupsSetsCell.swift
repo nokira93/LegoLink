@@ -22,6 +22,7 @@ class GroupsSetsCell: UICollectionViewCell {
         let view = UIView()
         return view
     }()
+    var bazierPath = BezierPathGroup()
     
     init() {
         super.init(frame: .zero)
