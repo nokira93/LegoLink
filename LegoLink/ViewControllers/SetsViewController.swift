@@ -38,7 +38,8 @@ class SetsViewController: UIViewController,UICollectionViewDelegate,UICollection
             setCollectionView?.backgroundColor = .clear
             
             apIManager.delegate = self
-            setCollectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "GroupsSetsCell")
+            setCollectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
+//            setCollectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "GroupsSetsCell")
 
             view.addSubview(setCollectionView ?? UICollectionView())
             
@@ -57,22 +58,22 @@ extension SetsViewController {
 //        guard let myCell = setCollectionView?.dequeueReusableCell(withReuseIdentifier: "GroupsSetsCell", for: indexPath) as? GroupsSetsCell else {
 //            fatalError("Error")
 //        }
-        let cell = setCollectionView?.dequeueReusableCell(withReuseIdentifier: "GroupSetsCell", for: indexPath) as! GroupsSetsCell
-        cell.backgroundColor = .clear
-        return cell
+//        let cell = setCollectionView?.dequeueReusableCell(withReuseIdentifier: "GroupSetsCell", for: indexPath) as! GroupsSetsCell
+//        cell.backgroundColor = .clear
+//        return cell
         
-//        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
-//
-//        let imageview:UIImageView = UIImageView()
-//        imageview.backgroundColor = .clear
-//        myCell.backgroundColor = .clear
-//        imageview.contentMode = .scaleToFill
-//        let image:UIImage = UIImage(named: allSeries[indexPath.row].rawValue) ?? UIImage()
-//        imageview.image = image
-//
-//        myCell.backgroundView = imageview
-//
-//        return myCell
+        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
+
+        let imageview:UIImageView = UIImageView()
+        imageview.backgroundColor = .clear
+        myCell.backgroundColor = .clear
+        imageview.contentMode = .scaleToFill
+        let image:UIImage = UIImage(named: allSeries[indexPath.row].rawValue) ?? UIImage()
+        imageview.image = image
+
+        myCell.backgroundView = imageview
+
+        return myCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

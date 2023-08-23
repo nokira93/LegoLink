@@ -30,8 +30,13 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     var dataSource: [LegoSetModel]? = []
     let scrollView: UIScrollView = {
         let scroll = UIScrollView()
+        scroll.isPagingEnabled = true
         return scroll
     }()
+    
+    var viewWidth: CGFloat = 0
+    var viewHeight: CGFloat = 0
+    
     var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.currentPage = 0
@@ -41,6 +46,9 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     init(){
         super.init(nibName: nil, bundle: nil)
         setUpPickersConstraints()
+        viewWidth = scrollView.frame.size.width - 2 * Constraints.horizontalPadding
+        viewHeight = scrollView.frame.size.height - 2 * Constraints.horizontalPadding
+        
         self.view.backgroundColor = UIColor(red: 57/255, green: 57/255, blue: 56/255, alpha: 1)
         dataSource = CoreDataStack.shared.getStoredDataFromCoreData()
         pageControl.numberOfPages = (dataSource?.count ?? 0) / itemsPerPage

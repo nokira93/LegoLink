@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = ViewController()
         window.rootViewController = TabBarController()
+        updateCoreData()
         self.window = window
         self.window?.makeKeyAndVisible()
     }
@@ -52,7 +53,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Save changes in the application's managed object context when the application transitions to the background.
 //        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
-
+    func updateCoreData() {
+        let defaults = UserDefaults.standard
+        let lastUpdate = defaults.object(forKey: "lastUpdate") as? Double ?? 0
+        let currentTime = Date().timeIntervalSince1970
+        if lastUpdate + 50 < currentTime {
+//        if lastUpdate + 1209600 > Date().timeIntervalSince1970 {
+            defaults.set(currentTime, forKey: "lastUpdate")
+        }
+    }
 
 }
 
