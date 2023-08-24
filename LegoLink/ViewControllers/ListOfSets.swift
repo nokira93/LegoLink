@@ -28,6 +28,7 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     var tableView = UITableView()
     var itemsPerPage: Int = 25
     var dataSource: [LegoSetModel]? = []
+    var modDataSource: [LegoSetModel]? = []
     let scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.isPagingEnabled = true
@@ -51,7 +52,8 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         
         self.view.backgroundColor = UIColor(red: 57/255, green: 57/255, blue: 56/255, alpha: 1)
         dataSource = CoreDataStack.shared.getStoredDataFromCoreData()
-        pageControl.numberOfPages = (dataSource?.count ?? 0) / itemsPerPage
+        modData()
+        pageControl.numberOfPages = (modDataSource?.count ?? 0) / itemsPerPage
         tableView.backgroundColor = .clear
         tableView.dataSource = self
         tableView.delegate = self
@@ -122,6 +124,13 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -1 * Constraints.bottomPadding).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -1 * Constraints.horizontalPadding).isActive = true
     }
+    func modData(){
+        dataSource?.forEach({ item in
+            if item.numParts != 0 {
+                modDataSource?.append(item)
+            }
+        })
+    }
 }
 extension ListOfSets {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -142,7 +151,7 @@ extension ListOfSets {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SetsCell.identifier, for: indexPath) as? SetsCell else {
             fatalError("Error")
         }
-        cell.setUpView(url: dataSource?[indexPath.row].setURL ?? "https://rebrickable.com/home/", name: dataSource?[indexPath.row].name ?? "-", numOfParts: dataSource?[indexPath.row].numParts ?? 0, imageURL: dataSource?[indexPath.row].setImageURL ?? "-", setNum: dataSource?[indexPath.row].setNum ?? "-")
+        cell.setUpView(url: modDataSource?[indexPath.row].setURL ?? "https://rebrickable.com/home/", name: modDataSource?[indexPath.row].name ?? "-", numOfParts: modDataSource?[indexPath.row].numParts ?? 0, imageURL: modDataSource?[indexPath.row].setImageURL ?? "-", setNum: modDataSource?[indexPath.row].setNum ?? "-")
         cell.backgroundColor = .clear
 //        let myCell = UITableViewCell(style: .subtitle , reuseIdentifier: nil)
 //        myCell.contentView.backgroundColor = .blue
@@ -157,7 +166,7 @@ extension ListOfSets {
     
     @objc func segmentedValueChanged(_ sender:UISegmentedControl!) {
         itemsPerPage = arr[sender.selectedSegmentIndex]
-        pageControl.numberOfPages = (dataSource?.count ?? 0) / itemsPerPage
+        pageControl.numberOfPages = (modDataSource?.count ?? 0) / itemsPerPage
         tableView.reloadData()
      }
 }

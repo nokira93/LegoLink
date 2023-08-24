@@ -57,9 +57,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let defaults = UserDefaults.standard
         let lastUpdate = defaults.object(forKey: "lastUpdate") as? Double ?? 0
         let currentTime = Date().timeIntervalSince1970
-        if lastUpdate + 50 < currentTime {
-//        if lastUpdate + 1209600 > Date().timeIntervalSince1970 {
+        if lastUpdate + 1209600 < currentTime {
             defaults.set(currentTime, forKey: "lastUpdate")
+            CoreDataStack.shared.fetchData()
         }
     }
 

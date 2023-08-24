@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "08C22D64-771D-4C2C-B6FB-CD969693E208"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoLink/CoreData/CoreDataStack.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  uuid = "08C22D64-771D-4C2C-B6FB-CD969693E208 - 11b7d22691f4735"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LegoLink.CoreDataStack.() -&gt; LegoLink.CoreDataStack.init() -&gt; LegoLink.CoreDataStack"
-                  moduleName = "LegoLink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturjurkowski/LegoLink/LegoLink/CoreData/CoreDataStack.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  uuid = "08C22D64-771D-4C2C-B6FB-CD969693E208 - b8dd2deb8c349cf6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; __C.NSPersistentContainer in variable initialization expression of LegoLink.CoreDataStack.persistentContainer : __C.NSPersistentContainer"
-                  moduleName = "LegoLink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturjurkowski/LegoLink/LegoLink/CoreData/CoreDataStack.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "140">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "692E1A00-6B5F-4683-B41A-3A7E058AF9D7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -62,8 +14,8 @@
             filePath = "LegoLink/CoreData/CoreDataStack.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "CoreDataStack"
             landmarkType = "3">
          </BreakpointContent>
@@ -78,8 +30,8 @@
             filePath = "LegoLink/CoreData/CoreDataStack.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "CoreDataStack"
             landmarkType = "3">
          </BreakpointContent>
@@ -94,8 +46,8 @@
             filePath = "LegoLink/CoreData/CoreDataStack.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "CoreDataStack"
             landmarkType = "3">
          </BreakpointContent>
@@ -110,8 +62,8 @@
             filePath = "LegoLink/CoreData/CoreDataStack.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "CoreDataStack"
             landmarkType = "3">
          </BreakpointContent>
