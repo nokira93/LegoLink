@@ -85,7 +85,8 @@ extension SetsViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let secondViewController = ListOfSets()
-        apIManager.fetchWeatcher(setName: "Harry%20Potter")
+//        CoreDataStack.shared.fetchData()
+        apIManager.fetchSets(setName: "Harry%20Potter")
 
         self.present(secondViewController, animated: true, completion: nil)
     }

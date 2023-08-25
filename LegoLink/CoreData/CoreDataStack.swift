@@ -47,16 +47,24 @@ class CoreDataStack {
 //    }
     
     func fetchData() {
-        delteOldData()
+        deleteAllData(entityName: "LegoSetModel")
         getNewData()
     }
-    func delteOldData(){
-//        let managerdContext = storeContainer.persistentStoreDescriptions
-//        for store in managerdContext.persistan
-//        let managedContext = storeContainer.viewContext
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LegoSetModel")
+    
+    func deleteAllData(entityName: String) {
 
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try managedContext.execute(batchDeleteRequest)
+            try managedContext.save()
+        } catch {
+            print("Delete CoreData error \(error)")
+        }
     }
+    
     func getNewData(){
         
     }

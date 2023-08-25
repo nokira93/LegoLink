@@ -23,7 +23,11 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     let screenWidth = UIScreen.main.bounds.width
     var searchBar = UISearchBar()
     var searchButton = UIButton()
-    var numPicker = UIPickerView()
+    var numPicker :UIPickerView = {
+        let picker = UIPickerView()
+        
+        return picker
+    }()
     var filter = UIButton()
     var tableView = UITableView()
     var itemsPerPage: Int = 25

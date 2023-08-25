@@ -52,6 +52,7 @@
 		C063D0B62A8E8E3600F3E885 /* SetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063D0B52A8E8E3600F3E885 /* SetsCell.swift */; };
 		C06456C22A65960100ACA921 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06456C12A65960100ACA921 /* Colors.swift */; };
 		C07055612A718EBC00AB733A /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07055602A718EBC00AB733A /* URLExtension.swift */; };
+		C08B94482A991B200018E43B /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B94472A991B200018E43B /* FilterController.swift */; };
 		C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FECED22A69BA4F005B22BD /* UserLocationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		C063D0B52A8E8E3600F3E885 /* SetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsCell.swift; sourceTree = "<group>"; };
 		C06456C12A65960100ACA921 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C07055602A718EBC00AB733A /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		C08B94472A991B200018E43B /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		C0FECED22A69BA4F005B22BD /* UserLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -240,6 +242,7 @@
 				C04736082A5DC1BE00ED9116 /* SetsViewController.swift */,
 				C05E757B2A5F324E00646EDB /* DetailesSet.swift */,
 				C00C445B2A8D4909007068F1 /* ListOfSets.swift */,
+				C08B94472A991B200018E43B /* FilterController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				C05A99A52A6D9C1500903BC5 /* LegoPart.swift in Sources */,
 				C05A99AB2A6D9C4000903BC5 /* LegoSet.swift in Sources */,
 				C0596B9D2A5731B400F783F9 /* PersonalViewController.swift in Sources */,
+				C08B94482A991B200018E43B /* FilterController.swift in Sources */,
 				C07055612A718EBC00AB733A /* URLExtension.swift in Sources */,
 				C05E757D2A5F324E00646EDB /* DetailesSet.swift in Sources */,
 				C05A99A12A6D9BFE00903BC5 /* LegoInventorySet.swift in Sources */,

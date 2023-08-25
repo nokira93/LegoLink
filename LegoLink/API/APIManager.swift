@@ -20,7 +20,7 @@ class APIManager {
     var delegate: ApiProviderDelegate?
     var saved: [LegoSetModel] = []
     
-    func fetchWeatcher(setName: String) {
+    func fetchSets(setName: String) {
         let urlString =  "\(ApiKey.url)&search=\(setName)"
         performRequest(with: urlString)
     }
