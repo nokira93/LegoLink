@@ -10,8 +10,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class SetsViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, ApiProviderDelegate {
-    func didUpdate(_ manager: APIManager, sets: LegoSetModel) {
-        print(sets)
+    func didUpdate(_ manager: APIManager, sets: [LegoSetModel]) {
+        print("Number of new entities: \(sets.count)")
     }
     
     func didFailWithError(error: Error) {
@@ -86,7 +86,7 @@ extension SetsViewController {
         
         let secondViewController = ListOfSets()
 //        CoreDataStack.shared.fetchData()
-        apIManager.fetchSets(setName: "Harry%20Potter")
+//        apIManager.fetchSets(setName: "Harry%20Potter")
 
         self.present(secondViewController, animated: true, completion: nil)
     }

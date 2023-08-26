@@ -11,7 +11,7 @@ import CoreData
 
 
 protocol ApiProviderDelegate {
-    func didUpdate(_ manager: APIManager, sets: LegoSetModel)
+    func didUpdate(_ manager: APIManager, sets: [LegoSetModel])
     func didFailWithError(error: Error)
 }
 
@@ -42,17 +42,20 @@ class APIManager {
             task.resume()
         }
     }
-    func parseJSON(_ data: Data) -> LegoSetModel? {
+    func parseJSON(_ data: Data) -> [LegoSetModel]? {
 
         let decoder = JSONDecoder()
         var legoArr: [LegoSetModel] = []
         do {
             let decodeData = try decoder.decode(PageResponse<LegoSet>.self, from: data)
-            let lego = decodeData.results[0]
+            decodeData.results.forEach { lego in
+                
+                
+                //            let lego = decodeData.results[0]
                 let legoSet: LegoSetModel
-
+                
                 legoSet = CoreDataStack.shared.createModel()
-
+                
                 legoSet.name = lego.name
                 legoSet.themeID = Int16(lego.theme_id ?? 0)
                 legoSet.numParts = Int16(lego.num_parts)
@@ -60,15 +63,14 @@ class APIManager {
                 legoSet.setImageURL = lego.set_img_url
                 legoSet.setNum = lego.set_num
                 legoSet.setURL = lego.set_url
-
+                
                 legoSet.data = Int32(Date().timeIntervalSince1970)
-
+                
                 legoArr.append(legoSet)
-                saveLego()
-                return legoSet
-            
-            
-//            return legoArr
+//                saveLego()
+//                return legoSet    
+            }
+            return legoArr
         } catch {
             delegate?.didFailWithError(error: error)
             return nil
