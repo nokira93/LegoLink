@@ -47,7 +47,7 @@ class CoreDataStack {
 //    }
     
     func fetchData() {
-        deleteAllData(entityName: "LegoSetModel")
+//        deleteAllData(entityName: "LegoSetModel")
         getNewData()
     }
     
@@ -80,7 +80,6 @@ class CoreDataStack {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LegoSetModel")
         do {
             return try managedContext.fetch(fetchRequest) as? [LegoSetModel]
-            
         } catch{
             return nil
             

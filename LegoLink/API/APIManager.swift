@@ -36,6 +36,7 @@ class APIManager {
                 if let safeData = data {
                     if let letoSet = self.parseJSON(safeData){
                         self.delegate?.didUpdate(self, sets: letoSet)
+                        self.saveLego()
                     }
                 }
             }
@@ -49,7 +50,6 @@ class APIManager {
         do {
             let decodeData = try decoder.decode(PageResponse<LegoSet>.self, from: data)
             decodeData.results.forEach { lego in
-                
                 
                 //            let lego = decodeData.results[0]
                 let legoSet: LegoSetModel
