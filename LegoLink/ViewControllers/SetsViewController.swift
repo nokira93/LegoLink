@@ -20,7 +20,7 @@ class SetsViewController: UIViewController,UICollectionViewDelegate,UICollection
 
     var setCollectionView: UICollectionView?
     var allSeries = SeriesTypes.allCases
-    var apIManager = APIManager()
+//    var apIManager = APIManager()
     let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 10
@@ -37,7 +37,7 @@ class SetsViewController: UIViewController,UICollectionViewDelegate,UICollection
             setCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
             setCollectionView?.backgroundColor = .clear
             
-            apIManager.delegate = self
+//            apIManager.delegate = self
             setCollectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
 //            setCollectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "GroupsSetsCell")
 

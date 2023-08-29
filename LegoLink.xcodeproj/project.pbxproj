@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C00845382A9D1223003A3A09 /* CollectionViewCellWithTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00845372A9D1223003A3A09 /* CollectionViewCellWithTableView.swift */; };
 		C00C445C2A8D4909007068F1 /* ListOfSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C445B2A8D4909007068F1 /* ListOfSets.swift */; };
 		C00C445F2A8D4C12007068F1 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C445E2A8D4C12007068F1 /* Constraints.swift */; };
 		C03C79A22A954DA100C3AEBA /* BezierPathGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C79A12A954DA100C3AEBA /* BezierPathGroup.swift */; };
@@ -52,6 +53,7 @@
 		C063D0B62A8E8E3600F3E885 /* SetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063D0B52A8E8E3600F3E885 /* SetsCell.swift */; };
 		C06456C22A65960100ACA921 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06456C12A65960100ACA921 /* Colors.swift */; };
 		C07055612A718EBC00AB733A /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07055602A718EBC00AB733A /* URLExtension.swift */; };
+		C07FFC612A9E63AE0046A7A7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07FFC602A9E63AE0046A7A7 /* SettingsView.swift */; };
 		C08B94482A991B200018E43B /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B94472A991B200018E43B /* FilterController.swift */; };
 		C0FECED32A69BA4F005B22BD /* UserLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FECED22A69BA4F005B22BD /* UserLocationController.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C00845372A9D1223003A3A09 /* CollectionViewCellWithTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellWithTableView.swift; sourceTree = "<group>"; };
 		C00C445B2A8D4909007068F1 /* ListOfSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSets.swift; sourceTree = "<group>"; };
 		C00C445E2A8D4C12007068F1 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		C03C79A12A954DA100C3AEBA /* BezierPathGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPathGroup.swift; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 		C063D0B52A8E8E3600F3E885 /* SetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsCell.swift; sourceTree = "<group>"; };
 		C06456C12A65960100ACA921 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C07055602A718EBC00AB733A /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		C07FFC602A9E63AE0046A7A7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C08B94472A991B200018E43B /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		C0FECED22A69BA4F005B22BD /* UserLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				C04BFF4D2A92804A00AE6CAD /* PickerView.swift */,
+				C07FFC602A9E63AE0046A7A7 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 			children = (
 				C063D0B52A8E8E3600F3E885 /* SetsCell.swift */,
 				C04BFF4F2A92A07700AE6CAD /* GroupsSetsCell.swift */,
+				C00845372A9D1223003A3A09 /* CollectionViewCellWithTableView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C00845382A9D1223003A3A09 /* CollectionViewCellWithTableView.swift in Sources */,
 				C04BFF502A92A07700AE6CAD /* GroupsSetsCell.swift in Sources */,
 				C05A999B2A6D9BC500903BC5 /* LegoColor.swift in Sources */,
 				C0596B692A57307E00F783F9 /* ViewController.swift in Sources */,
@@ -476,6 +483,7 @@
 				C05A99A32A6D9C0B00903BC5 /* LegoLostPart.swift in Sources */,
 				C0596B672A57307E00F783F9 /* SceneDelegate.swift in Sources */,
 				C05A99A92A6D9C3000903BC5 /* LegoPartColor.swift in Sources */,
+				C07FFC612A9E63AE0046A7A7 /* SettingsView.swift in Sources */,
 				C05A99AD2A6D9C4C00903BC5 /* LegoTheme.swift in Sources */,
 				C05B1C7B2A5B429000DC8F48 /* MapViewController.swift in Sources */,
 				C0596B992A57318700F783F9 /* ScanerViewController.swift in Sources */,

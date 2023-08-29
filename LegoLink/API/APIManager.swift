@@ -20,11 +20,16 @@ class APIManager {
     var delegate: ApiProviderDelegate?
     var saved: [LegoSetModel] = []
     
+    static var shared = APIManager()
+
     func fetchSets(setName: String) {
         let urlString =  "\(ApiKey.url)&search=\(setName)"
         performRequest(with: urlString)
     }
     
+    private init(){
+        
+    }
     func performRequest(with urlString: String) {
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default)
