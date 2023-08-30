@@ -23,6 +23,7 @@ class APIManager {
     static var shared = APIManager()
 
     func fetchSets(setName: String) {
+//        let urlString =  "https://rebrickable.com/api/v3/lego/sets/?key=3014f8e704c3118058887c65f15b2ca5&page=2&search=Harry+Potter"
         let urlString =  "\(ApiKey.url)&search=\(setName)"
         performRequest(with: urlString)
     }
@@ -30,6 +31,7 @@ class APIManager {
     private init(){
         
     }
+    
     func performRequest(with urlString: String) {
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default)
@@ -54,6 +56,13 @@ class APIManager {
         var legoArr: [LegoSetModel] = []
         do {
             let decodeData = try decoder.decode(PageResponse<LegoSet>.self, from: data)
+            if  decodeData.next != nil {
+                if let nextLink = decodeData.next {
+                    print("test \(nextLink.absoluteString)")
+                    performRequest(with: nextLink.absoluteString)
+                }
+            }
+            
             decodeData.results.forEach { lego in
                 
                 //            let lego = decodeData.results[0]

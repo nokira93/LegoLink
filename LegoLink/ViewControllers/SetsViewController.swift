@@ -86,7 +86,7 @@ extension SetsViewController {
         
         let secondViewController = ListOfSets()
 //        CoreDataStack.shared.fetchData()
-//        apIManager.fetchSets(setName: "Harry%20Potter")
+        APIManager.shared.fetchSets(setName: "Harry%20Potter")
 
         self.present(secondViewController, animated: true, completion: nil)
     }

@@ -33,6 +33,6 @@ class SettingsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     @objc func reloadCoreData() {
-        print("Test")
+        APIManager.shared.fetchSets(setName: "Harry%20Potter")
     }
 }
