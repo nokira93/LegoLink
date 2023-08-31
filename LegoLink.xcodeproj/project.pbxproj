@@ -50,6 +50,8 @@
 		C05E86422A6D24BD0054CA97 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */; };
 		C05E86442A6D8E910054CA97 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86432A6D8E910054CA97 /* APIManager.swift */; };
 		C05E864A2A6D8F2D0054CA97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05E86492A6D8F2D0054CA97 /* Extensions.swift */; };
+		C060AF6E2AA113F900341EC3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060AF6D2AA113F900341EC3 /* LoadingView.swift */; };
+		C060AF702AA1154600341EC3 /* LoadingScreenControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060AF6F2AA1154600341EC3 /* LoadingScreenControllerViewController.swift */; };
 		C063D0B62A8E8E3600F3E885 /* SetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063D0B52A8E8E3600F3E885 /* SetsCell.swift */; };
 		C06456C22A65960100ACA921 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06456C12A65960100ACA921 /* Colors.swift */; };
 		C07055612A718EBC00AB733A /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07055602A718EBC00AB733A /* URLExtension.swift */; };
@@ -121,6 +123,8 @@
 		C05E86412A6D24BD0054CA97 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C05E86432A6D8E910054CA97 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		C05E86492A6D8F2D0054CA97 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C060AF6D2AA113F900341EC3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C060AF6F2AA1154600341EC3 /* LoadingScreenControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenControllerViewController.swift; sourceTree = "<group>"; };
 		C063D0B52A8E8E3600F3E885 /* SetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsCell.swift; sourceTree = "<group>"; };
 		C06456C12A65960100ACA921 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C07055602A718EBC00AB733A /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 			children = (
 				C04BFF4D2A92804A00AE6CAD /* PickerView.swift */,
 				C07FFC602A9E63AE0046A7A7 /* SettingsView.swift */,
+				C060AF6D2AA113F900341EC3 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				C05E757B2A5F324E00646EDB /* DetailesSet.swift */,
 				C00C445B2A8D4909007068F1 /* ListOfSets.swift */,
 				C08B94472A991B200018E43B /* FilterController.swift */,
+				C060AF6F2AA1154600341EC3 /* LoadingScreenControllerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				C0596B6F2A57307E00F783F9 /* LegoLink.xcdatamodeld in Sources */,
 				C05E86422A6D24BD0054CA97 /* CoreDataStack.swift in Sources */,
 				C05A999D2A6D9BD300903BC5 /* LegoElement.swift in Sources */,
+				C060AF702AA1154600341EC3 /* LoadingScreenControllerViewController.swift in Sources */,
 				C05A99992A6D9BB100903BC5 /* LegoBuild.swift in Sources */,
 				C06456C22A65960100ACA921 /* Colors.swift in Sources */,
 				C05E86402A6D24A00054CA97 /* DataModel.xcdatamodeld in Sources */,
@@ -481,6 +488,7 @@
 				C04736092A5DC1BE00ED9116 /* SetsViewController.swift in Sources */,
 				C05A99A72A6D9C2300903BC5 /* LegoPartCategory.swift in Sources */,
 				C05A99A32A6D9C0B00903BC5 /* LegoLostPart.swift in Sources */,
+				C060AF6E2AA113F900341EC3 /* LoadingView.swift in Sources */,
 				C0596B672A57307E00F783F9 /* SceneDelegate.swift in Sources */,
 				C05A99A92A6D9C3000903BC5 /* LegoPartColor.swift in Sources */,
 				C07FFC612A9E63AE0046A7A7 /* SettingsView.swift in Sources */,

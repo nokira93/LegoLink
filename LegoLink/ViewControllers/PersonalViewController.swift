@@ -48,6 +48,9 @@ class PersonalViewController: UIViewController {
 
     }
     @objc func reloadCoreData() {
+        let view = LoadingScreenControllerViewController()
+//        view.modalPresentationStyle = .fullScreen
+        self.present(view, animated: true, completion: nil)
         print("Test")
     }
 }
