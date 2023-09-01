@@ -13,6 +13,7 @@ class LoadingView: UIView {
         let loading = UIActivityIndicatorView()
         loading.style = .large
         loading.color = .white
+        loading.startAnimating()
         return loading
      }()
     init(){
