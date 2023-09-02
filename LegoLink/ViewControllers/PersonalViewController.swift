@@ -49,8 +49,9 @@ class PersonalViewController: UIViewController {
     }
     @objc func reloadCoreData() {
         let view = LoadingScreenControllerViewController()
-        view.modalPresentationStyle = .fullScreen
+        view.modalPresentationStyle = .overFullScreen
+        view.view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
+        view.view.isOpaque = true
         self.present(view, animated: true, completion: nil)
-        print("Test")
     }
 }

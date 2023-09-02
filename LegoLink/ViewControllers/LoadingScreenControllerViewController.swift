@@ -15,10 +15,14 @@ class LoadingScreenControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.view.backgroundColor = .white
+//        self.view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
+//        view.isOpaque = false
+//        view.backgroundColor = .white
         self.view.addSubview(loadingView)
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         loadingView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         loadingView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+//        loadingView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
     }
     
 
