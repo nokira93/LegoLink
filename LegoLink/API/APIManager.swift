@@ -22,17 +22,19 @@ class APIManager {
     
     static var shared = APIManager()
 
-    func fetchSets(setName: String) {
+    func fetchSets(setID: Int, series: String) {
 //        let urlString =  "https://rebrickable.com/api/v3/lego/sets/?key=3014f8e704c3118058887c65f15b2ca5&page=2&search=Harry+Potter"
-        let urlString =  "\(ApiKey.url)&search=\(setName)"
-        performRequest(with: urlString)
+        let urlString =  "\(ApiKey.withPage)?theme_id=\(setID)"
+//        let urlString =  "\(ApiKey.withPage)&search=\(setName)"
+        print("TEST Linkow \(urlString)")
+        performRequest(with: urlString, series: series)
     }
     
     private init(){
         
     }
     
-    func performRequest(with urlString: String) {
+    func performRequest(with urlString: String, series: String) {
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -41,7 +43,7 @@ class APIManager {
                     return
                 }
                 if let safeData = data {
-                    if let letoSet = self.parseJSON(safeData){
+                    if let letoSet = self.parseJSON(safeData, series: series){
                         self.delegate?.didUpdate(self, sets: letoSet)
                         self.saveLego()
                     }
@@ -50,7 +52,7 @@ class APIManager {
             task.resume()
         }
     }
-    func parseJSON(_ data: Data) -> [LegoSetModel]? {
+    func parseJSON(_ data: Data, series: String) -> [LegoSetModel]? {
 
         let decoder = JSONDecoder()
         var legoArr: [LegoSetModel] = []
@@ -58,8 +60,8 @@ class APIManager {
             let decodeData = try decoder.decode(PageResponse<LegoSet>.self, from: data)
             if  decodeData.next != nil {
                 if let nextLink = decodeData.next {
-                    print("test \(nextLink.absoluteString)")
-                    performRequest(with: nextLink.absoluteString)
+                    print("test dupa \(nextLink.absoluteString)")
+                    performRequest(with: nextLink.absoluteString, series: series)
                 }
             }
             
@@ -69,7 +71,7 @@ class APIManager {
                 let legoSet: LegoSetModel
                 
                 legoSet = CoreDataStack.shared.createModel()
-                
+                legoSet.series = series
                 legoSet.name = lego.name
                 legoSet.themeID = Int16(lego.theme_id ?? 0)
                 legoSet.numParts = Int16(lego.num_parts)

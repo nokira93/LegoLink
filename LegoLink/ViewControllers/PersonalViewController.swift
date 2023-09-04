@@ -48,18 +48,25 @@ class PersonalViewController: UIViewController {
 
     }
     @objc func reloadCoreData() {
+//
 
-        print("Teeest \(SeriesTypes.allCases)")
 //        CoreDataStack.shared.deleteAllData(entityName: "LegoSetModel")
-//        APIManager.shared.fetchSets(setName: "Harry%20Potter")
-//        let view = LoadingScreenControllerViewController()
-//        view.modalPresentationStyle = .overFullScreen
-//        view.view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-//        view.view.isOpaque = true
-//        self.present(view, animated: true, completion: nil)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-//            view.dismiss(animated: true)
-//            print("Dismiss view")
-//        })
+        
+        SeriesTypes.allCases.forEach { legoSet in
+//            print("\(legoSet.rawValue)")
+            let name = SeriesTypes.getString(legoSet)
+            APIManager.shared.fetchSets(setID: legoSet.getId(set: legoSet), series: legoSet.rawValue)
+            print("Done \(legoSet)")
+        }
+    
+        let view = LoadingScreenControllerViewController()
+        view.modalPresentationStyle = .overFullScreen
+        view.view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
+        view.view.isOpaque = true
+        self.present(view, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            view.dismiss(animated: true)
+            print("Dismiss view")
+        })
     }
 }

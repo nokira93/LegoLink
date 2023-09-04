@@ -64,7 +64,7 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         tableView.allowsSelection = false
         tableView.register(SetsCell.self, forCellReuseIdentifier: SetsCell.identifier)
         segmentPicker.addTarget(self, action: #selector(segmentedValueChanged(_:)), for: .valueChanged)
-        print("Test dupa \(dataSource?.count)")
+
     }
     
     required init?(coder: NSCoder) {
