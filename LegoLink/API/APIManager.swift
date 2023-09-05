@@ -60,7 +60,6 @@ class APIManager {
             let decodeData = try decoder.decode(PageResponse<LegoSet>.self, from: data)
             if  decodeData.next != nil {
                 if let nextLink = decodeData.next {
-                    print("test dupa \(nextLink.absoluteString)")
                     performRequest(with: nextLink.absoluteString, series: series)
                 }
             }

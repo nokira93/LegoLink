@@ -38,7 +38,7 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         scroll.isPagingEnabled = true
         return scroll
     }()
-    
+    var legoSet: SeriesTypes
     var viewWidth: CGFloat = 0
     var viewHeight: CGFloat = 0
     
@@ -48,8 +48,10 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         return pageControl
     }()
     
-    init(){
+    init(legoSet: SeriesTypes){
+        self.legoSet = legoSet
         super.init(nibName: nil, bundle: nil)
+        
         setUpPickersConstraints()
         viewWidth = scrollView.frame.size.width - 2 * Constraints.horizontalPadding
         viewHeight = scrollView.frame.size.height - 2 * Constraints.horizontalPadding
@@ -131,7 +133,7 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     func modData(){
         dataSource?.forEach({ item in
-            if item.numParts != 0 {
+            if item.numParts != 0 && item.series == legoSet.rawValue {
                 modDataSource?.append(item)
             }
         })

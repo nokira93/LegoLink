@@ -84,7 +84,7 @@ extension SetsViewController {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let secondViewController = ListOfSets()
+        let secondViewController = ListOfSets(legoSet: .city)
 //        CoreDataStack.shared.fetchData()
 
         self.present(secondViewController, animated: true, completion: nil)
