@@ -59,6 +59,7 @@ class ListOfSets: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         self.view.backgroundColor = UIColor(red: 57/255, green: 57/255, blue: 56/255, alpha: 1)
         dataSource = CoreDataStack.shared.getStoredDataFromCoreData()
         modData()
+        print("Index dataSource: \(dataSource?.count) || \(modDataSource?.count)")
         pageControl.numberOfPages = (modDataSource?.count ?? 0) / itemsPerPage
         tableView.backgroundColor = .clear
         tableView.dataSource = self

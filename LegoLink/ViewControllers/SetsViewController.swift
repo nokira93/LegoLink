@@ -83,8 +83,8 @@ extension SetsViewController {
         return CGSize(width:widthPerItem, height: widthPerItem)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let secondViewController = ListOfSets(legoSet: .city)
+        print("Index \(indexPath.row)")
+        let secondViewController = ListOfSets(legoSet: allSeries[indexPath.row])
 //        CoreDataStack.shared.fetchData()
 
         self.present(secondViewController, animated: true, completion: nil)

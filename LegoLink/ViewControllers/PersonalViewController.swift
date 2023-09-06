@@ -56,7 +56,6 @@ class PersonalViewController: UIViewController {
 //            print("\(legoSet.rawValue)")
             let name = SeriesTypes.getString(legoSet)
             APIManager.shared.fetchSets(setID: legoSet.getId(set: legoSet), series: legoSet.rawValue)
-            print("Done \(legoSet)")
         }
     
         let view = LoadingScreenControllerViewController()
@@ -66,7 +65,6 @@ class PersonalViewController: UIViewController {
         self.present(view, animated: true, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             view.dismiss(animated: true)
-            print("Dismiss view")
         })
     }
 }
