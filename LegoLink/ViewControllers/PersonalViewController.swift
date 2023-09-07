@@ -50,10 +50,10 @@ class PersonalViewController: UIViewController {
     @objc func reloadCoreData() {
 //
 
-//        CoreDataStack.shared.deleteAllData(entityName: "LegoSetModel")
+        CoreDataStack.shared.deleteAllData(entityName: "LegoSetModel")
         
         SeriesTypes.allCases.forEach { legoSet in
-//            print("\(legoSet.rawValue)")
+            print("\(legoSet.rawValue)")
             let name = SeriesTypes.getString(legoSet)
             APIManager.shared.fetchSets(setID: legoSet.getId(set: legoSet), series: legoSet.rawValue)
         }

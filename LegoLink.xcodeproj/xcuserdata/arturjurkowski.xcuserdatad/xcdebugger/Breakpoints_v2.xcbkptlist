@@ -3,4 +3,54 @@
    uuid = "3C6DF280-0413-47AC-8FC9-0F1EC9651D2C"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62C14265-62CF-41A9-8B2C-4DBA5FE0216C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LegoLink/API/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "parseJSON(_:series:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "62C14265-62CF-41A9-8B2C-4DBA5FE0216C - 22b287c8b11e7b86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LegoLink.APIManager.parseJSON(_: Foundation.Data, series: Swift.String) -&gt; Swift.Optional&lt;Swift.Array&lt;LegoLink.LegoSetModel&gt;&gt;"
+                  moduleName = "LegoLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturjurkowski/LegoLink/LegoLink/API/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "1092">
+               </Location>
+               <Location
+                  uuid = "62C14265-62CF-41A9-8B2C-4DBA5FE0216C - f53f4f40d1705c59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (LegoLink.LegoSet) -&gt; () in LegoLink.APIManager.parseJSON(_: Foundation.Data, series: Swift.String) -&gt; Swift.Optional&lt;Swift.Array&lt;LegoLink.LegoSetModel&gt;&gt;"
+                  moduleName = "LegoLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturjurkowski/LegoLink/LegoLink/API/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "456">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

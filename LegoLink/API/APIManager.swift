@@ -24,7 +24,7 @@ class APIManager {
 
     func fetchSets(setID: Int, series: String) {
 //        let urlString =  "https://rebrickable.com/api/v3/lego/sets/?key=3014f8e704c3118058887c65f15b2ca5&page=2&search=Harry+Potter"
-        let urlString =  "\(ApiKey.withPage)?theme_id=\(setID)"
+        let urlString =  "\(ApiKey.withPage)&theme_id=\(setID)"
 //        let urlString =  "\(ApiKey.withPage)&search=\(setName)"
         print("TEST Linkow \(urlString)")
         performRequest(with: urlString, series: series)
@@ -63,7 +63,7 @@ class APIManager {
                     performRequest(with: nextLink.absoluteString, series: series)
                 }
             }
-            
+            print("Test \(decodeData.count)")
             decodeData.results.forEach { lego in
                 
                 //            let lego = decodeData.results[0]
