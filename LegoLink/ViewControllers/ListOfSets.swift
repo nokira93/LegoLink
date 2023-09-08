@@ -150,7 +150,11 @@ extension ListOfSets {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemsPerPage
+        if itemsPerPage >= modDataSource?.count ?? 0 {
+            return itemsPerPage}
+        else {
+            return modDataSource?.count ?? 0
+        }
     }
     
   
