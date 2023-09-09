@@ -15,7 +15,7 @@ class DetailedSet: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        test()
+//        test()
         
 
         view.backgroundColor = .magenta
@@ -33,9 +33,9 @@ class DetailedSet: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
 
-    func test() {
-        data = CoreDataStack.shared.getStoredDataFromCoreData()
-    }
+//    func test() {
+//        data = CoreDataStack.shared.getStoredDataFromCoreData()
+//    }
 }
 extension DetailedSet {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
