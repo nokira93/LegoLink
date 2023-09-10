@@ -33,9 +33,7 @@ class DetailedSet: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
 
-//    func test() {
-//        data = CoreDataStack.shared.getStoredDataFromCoreData()
-//    }
+
 }
 extension DetailedSet {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
